@@ -30,29 +30,29 @@ const Postlist = () => {
   return (
     <div>
       <button style={{borderRadius:'20px', backgroundColor:"transparent", color:'white'}} onClick={() => {navigate('/post')}} >Create Post</button>
-      <div class="container py-5">
-        <div class="row text-center text-white mb-5">
-          <div class="col-lg-7 mx-auto" style={{minWidth:'900px'}}  >
-            <h1 class="display-4" >Post List</h1>
+      <div className="container py-5">
+        <div className="row text-center text-white mb-5">
+          <div className="col-lg-7 mx-auto" style={{minWidth:'900px'}}  >
+            <h1 className="display-4" >Post List</h1>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <ul class="list-group shadow">
+        <div className="row">
+          <div className="col-lg-8 mx-auto">
+            <ul className="list-group shadow">
             { Posts.map((item,index)=>{
               
-              return(<li class="list-group-item">
-                <div class="media align-items-lg-center flex-column flex-lg-row p-3">
-                  <div class="media-body order-2 order-lg-1">
-                    <h5 class="mt-0 font-weight-bold mb-2">
+              return(<li className="list-group-item">
+                <div className="media align-items-lg-center flex-column flex-lg-row p-3">
+                  <div className="media-body order-2 order-lg-1">
+                    <h5 className="mt-0 font-weight-bold mb-2">
                      {item.Name}
                     </h5>
-                    <p class="font-italic text-muted mb-0 small">
+                    <p className="font-italic text-muted mb-0 small">
                      {item.Post}
                     </p>
-                    <div class="d-flex align-items-center justify-content-between mt-1">
-                      <button class="font-weight-bold my-2" style={{borderBlock:"bold", borderRadius:"20px"}}  onClick={()=>{navigate(`/comments/${item._id}`)}}>Comments</button>
-                      <ul class="list-inline small">
+                    <div className="d-flex align-items-center justify-content-between mt-1">
+                      <button className="font-weight-bold my-2" style={{borderBlock:"bold", borderRadius:"20px"}}  onClick={()=>{navigate(`/comments/${item._id}`)}}>Comments</button>
+                      <ul className="list-inline small">
 
                       </ul>
                     </div>

@@ -22,8 +22,8 @@ const Comments = () => {
   let [PostEditabale, setPostEditable] = useState(false);
   /////////////////////Text Editable///////////////////
   let [makeeditable, setMakeeditable] = useState(false);
-  let [commentEdit, setCommentEdit] = useState();
-  let [treackComment, setTreackComment] = useState();
+  // let [commentEdit, setCommentEdit] = useState();
+  // let [treackComment, setTreackComment] = useState();
   let [MainCommentEdit, setMainCommentEdit] = useState(false);
 
   /////////////////////nested Comment edit/////////////
@@ -313,7 +313,7 @@ const Comments = () => {
                           <div className="media">
                             <a
                               className="pr-3"
-                              href={"#"}
+                              href={'#'}
                               onClick={() => {
                                 setA(!aaa);
                                 setMainCommentEdit(true);

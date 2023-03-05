@@ -1,6 +1,7 @@
-const express = require('express')
+const express = require('express');
+const serverless = require("serverless-http");
 const mongoose = require('mongoose')
-const route = require('./routers/route')
+const route = require('../src/routers/route')
 const app = express()
 const cors=require("cors");
 
@@ -20,7 +21,8 @@ mongoose.connect("mongodb+srv://ayush8120:GeGo5qhr7wM6VQyg@cluster0.n1nevi5.mong
 .then(()=>console.log("MongoDB is connected"))
 .catch((err)=>console.log(err))
 
-app.use('/',route)
+// app.use('/',route)
+app.use(`/.netlify/functions/api`, route);
 
 
 app.use((req, res) => {
@@ -28,5 +30,8 @@ app.use((req, res) => {
 })
 
 
-app.listen(process.env.PORT ||3003,function ()
-{console.log("Express app is running on port "+(process.env.PORT ||3003))})
+// app.listen(process.env.PORT ||3003,function ()
+// {console.log("Express app is running on port "+(process.env.PORT ||3003))})
+
+module.exports = app;
+module.exports.handler = serverless(app);
