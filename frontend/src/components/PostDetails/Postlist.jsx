@@ -19,7 +19,7 @@ const Postlist = () => {
   if (Posts.length === 0) {
     let Obj = {
       method: "get",
-      url: `http://localhost:3003/getpost`,
+      url: `https://melodious-stardust-14bd07.netlify.app/.netlify/functions/api/getpost`,
     };
     fetchDataFromApi(Obj).then((res) => {
       console.log(res);

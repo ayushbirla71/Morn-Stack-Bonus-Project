@@ -11,6 +11,7 @@ function App() {
        <Routes>
          <Route path="/comments/:postId" element={<Comments/>}/>
          <Route path="/home" element={<Postlist/>}/>
+         <Route path="/" element={<Postlist/>}/>
          <Route path="/post" element={<Post/>}/>
        </Routes>
        </BrowserRouter>

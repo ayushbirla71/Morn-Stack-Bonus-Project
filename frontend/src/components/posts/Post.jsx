@@ -11,7 +11,7 @@ const Post = () => {
   const creatPost = () => {
     let Obj = {
       method: "post",
-      url: `http://localhost:3003/createpost`,
+      url: `https://melodious-stardust-14bd07.netlify.app/.netlify/functions/api/createpost`,
       data: {Name: name , Post:PostText},
     };
     fetchDataFromApi(Obj).then((res) => {

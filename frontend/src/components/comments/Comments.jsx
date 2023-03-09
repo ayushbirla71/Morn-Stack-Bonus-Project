@@ -37,7 +37,7 @@ const Comments = () => {
   if (Posts == null) {
     let Obj = {
       method: "get",
-      url: `http://localhost:3003/getpostWithComments/${postId}`,
+      url: `https://melodious-stardust-14bd07.netlify.app/.netlify/functions/api/getpostWithComments/${postId}`,
     };
     fetchDataFromApi(Obj).then((res) => {
       console.log(res);
@@ -50,7 +50,7 @@ const Comments = () => {
   const createComments = () => {
     let Obj = {
       method: "post",
-      url: `http://localhost:3003/createcomment`,
+      url: `https://melodious-stardust-14bd07.netlify.app/.netlify/functions/api/createcomment`,
       data: { Comment: addComent, PostId: postId, Name: name },
     };
     fetchDataFromApi(Obj).then((res) => {
@@ -63,7 +63,7 @@ const Comments = () => {
   const sendComments = (text) => {
     let Obj = {
       method: "put",
-      url: `http://localhost:3003/updatecomment`,
+      url: `https://melodious-stardust-14bd07.netlify.app/.netlify/functions/api/updatecomment`,
       data: { Reply: addComent, Comment: PostEdit, _id: id, Name: name },
     };
     fetchDataFromApi(Obj).then((res) => {
@@ -79,7 +79,7 @@ const Comments = () => {
   const UpdateComments = (id, rpId, text) => {
     let Obj = {
       method: "put",
-      url: `http://localhost:3003/updateNestedcomment`,
+      url: `https://melodious-stardust-14bd07.netlify.app/.netlify/functions/api/updateNestedcomment`,
       data: { replyId: rpId, Comment: text, _id: id, Name: name },
     };
     fetchDataFromApi(Obj).then((res) => {
@@ -95,7 +95,7 @@ const Comments = () => {
   const editPost = (text) => {
     let Obj = {
       method: "put",
-      url: `http://localhost:3003/updatepost`,
+      url: `https://melodious-stardust-14bd07.netlify.app/.netlify/functions/api/updatepost`,
       data: { Post: PostEdit, _id: postId },
     };
     fetchDataFromApi(Obj).then((res) => {
@@ -111,7 +111,7 @@ const Comments = () => {
   const deletePost = () => {
     let Obj = {
       method: "Delete",
-      url: `http://localhost:3003/deletepost`,
+      url: `https://melodious-stardust-14bd07.netlify.app/.netlify/functions/api/deletepost`,
       data: { _id:postId },
     };
     fetchDataFromApi(Obj).then((res) => {
@@ -126,7 +126,7 @@ const Comments = () => {
   const deleteCom = (id, rpId) => {
     let Obj = {
       method: "Delete",
-      url: `http://localhost:3003/deletecomment`,
+      url: `https://melodious-stardust-14bd07.netlify.app/.netlify/functions/api/deletecomment`,
       data: { _id: id, replyId: rpId },
     };
     fetchDataFromApi(Obj).then((res) => {
