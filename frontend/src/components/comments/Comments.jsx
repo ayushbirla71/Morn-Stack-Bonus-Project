@@ -271,6 +271,7 @@ const Comments = () => {
               onChange={(event) => {
                 setName(event.target.value);
               }}
+              style={{color:"white"}}
             >
               Name <input></input>
             </label>
